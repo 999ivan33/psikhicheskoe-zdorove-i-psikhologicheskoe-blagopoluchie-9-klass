@@ -1,0 +1,2127 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>ОБЗР 9 класс — Психическое здоровье и психологическое благополучие</title>
+<style>
+  :root {
+    --bg-main: #0b0f14;
+    --bg-card: #141a22;
+    --bg-card-elevated: #1c2430;
+    --border-color: #2d3746;
+    --accent-emerald: #10b981;
+    --accent-emerald-dark: #059669;
+    --accent-amber: #f59e0b;
+    --accent-orange: #f97316;
+    --accent-blue: #38bdf8;
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --danger: #ef4444;
+    --success: #22c55e;
+  }
+
+  * {
+    box-sizing: border-box;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  input[type="text"] {
+    -webkit-user-select: text;
+    user-select: text;
+  }
+
+  @media print {
+    body { display: none !important; }
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    overflow-x: hidden;
+  }
+
+  /* Dynamic Watermark */
+  #watermark-layer {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 9000;
+    overflow: hidden;
+    opacity: 0.065;
+    display: none;
+  }
+
+  .watermark-grid {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-around;
+    justify-content: space-around;
+    transform: rotate(-28deg);
+    font-size: 14px;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 1px;
+  }
+
+  .watermark-item {
+    padding: 28px 36px;
+    white-space: nowrap;
+  }
+
+  /* Anti-cheat Blackout Shield */
+  #security-shield {
+    position: fixed;
+    inset: 0;
+    background: rgba(5, 8, 12, 0.98);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    z-index: 10000;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    text-align: center;
+  }
+
+  #security-shield.active {
+    display: flex;
+  }
+
+  .shield-box {
+    max-width: 420px;
+    background: var(--bg-card);
+    border: 2px solid var(--danger);
+    border-radius: 16px;
+    padding: 28px 22px;
+  }
+
+  .shield-icon {
+    font-size: 42px;
+    margin-bottom: 12px;
+  }
+
+  .shield-title {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--danger);
+    margin-bottom: 10px;
+  }
+
+  .shield-text {
+    font-size: 15px;
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+  }
+
+  /* Layout */
+  .container {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 14px 14px 48px;
+  }
+
+  .header-bar {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    padding: 14px 16px;
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .badge-topic {
+    background: rgba(16, 185, 129, 0.16);
+    color: #34d399;
+    border: 1px solid rgba(16, 185, 129, 0.45);
+    padding: 4px 10px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .progress-text {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--accent-amber);
+  }
+
+  .progress-track {
+    width: 100%;
+    height: 8px;
+    background: #070a0e;
+    border-radius: 99px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+  }
+
+  .progress-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, var(--accent-emerald), var(--accent-amber));
+    transition: width 0.35s ease;
+  }
+
+  /* Cards & Start Screen */
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 20px 18px;
+    margin-bottom: 14px;
+  }
+
+  h1 {
+    font-size: 22px;
+    margin: 0 0 8px;
+    line-height: 1.3;
+    color: #ffffff;
+  }
+
+  .subtitle {
+    color: var(--text-secondary);
+    font-size: 15px;
+    margin-bottom: 18px;
+  }
+
+  .rules-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .rule-item {
+    background: var(--bg-card-elevated);
+    border-left: 4px solid var(--accent-emerald);
+    padding: 10px 12px;
+    border-radius: 8px;
+    font-size: 14px;
+  }
+
+  .rule-item strong {
+    color: var(--accent-amber);
+  }
+
+  .grade-legend {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 6px;
+  }
+
+  .grade-pill {
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 700;
+    background: #0b0f14;
+    border: 1px solid var(--border-color);
+  }
+
+  .form-group {
+    margin-bottom: 14px;
+  }
+
+  .form-label {
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: var(--text-primary);
+  }
+
+  .form-input {
+    width: 100%;
+    padding: 13px 14px;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    background: #070a0e;
+    color: #ffffff;
+    font-size: 16px;
+    outline: none;
+  }
+
+  .form-input:focus {
+    border-color: var(--accent-emerald);
+  }
+
+  .btn {
+    width: 100%;
+    padding: 15px 18px;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: transform 0.1s ease, background 0.2s ease, opacity 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .btn:active {
+    transform: scale(0.98);
+  }
+
+  .btn-primary {
+    background: var(--accent-emerald);
+    color: #052e16;
+  }
+
+  .btn-primary:hover {
+    background: var(--accent-emerald-dark);
+    color: #ffffff;
+  }
+
+  .btn-primary:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    transform: none;
+  }
+
+  .btn-danger {
+    background: var(--danger);
+    color: #ffffff;
+  }
+
+  /* Step-by-step Accordion */
+  .accordion-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    transition: border-color 0.25s ease;
+  }
+
+  .accordion-item.active {
+    border: 2px solid var(--accent-amber);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.45);
+  }
+
+  .accordion-item.completed {
+    border-color: rgba(16, 185, 129, 0.55);
+    opacity: 0.85;
+  }
+
+  .accordion-item.locked {
+    opacity: 0.52;
+  }
+
+  .accordion-header {
+    padding: 14px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    background: var(--bg-card-elevated);
+  }
+
+  .acc-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .step-num {
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    background: #0b0f14;
+    border: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+
+  .accordion-item.active .step-num {
+    background: var(--accent-amber);
+    color: #0b0f14;
+    border-color: var(--accent-amber);
+  }
+
+  .accordion-item.completed .step-num {
+    background: var(--accent-emerald);
+    color: #052e16;
+    border-color: var(--accent-emerald);
+  }
+
+  .acc-title-wrap {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .acc-type-label {
+    font-size: 12px;
+    color: var(--text-secondary);
+    font-weight: 600;
+  }
+
+  .acc-status-text {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text-primary);
+  }
+
+  .points-badge {
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 8px;
+    border-radius: 6px;
+    background: rgba(245, 158, 11, 0.15);
+    color: var(--accent-amber);
+    border: 1px solid rgba(245, 158, 11, 0.35);
+    white-space: nowrap;
+  }
+
+  .accordion-body {
+    display: none;
+    padding: 16px;
+    border-top: 1px solid var(--border-color);
+  }
+
+  .accordion-item.active .accordion-body {
+    display: block;
+  }
+
+  .question-prompt {
+    font-size: 17px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 14px;
+    line-height: 1.45;
+  }
+
+  .question-hint {
+    font-size: 13px;
+    color: var(--accent-blue);
+    background: rgba(56, 189, 248, 0.1);
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    padding: 7px 11px;
+    border-radius: 8px;
+    margin-bottom: 14px;
+    font-weight: 600;
+  }
+
+  /* SVG Box */
+  .svg-container {
+    background: #080c11;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 10px;
+    margin-bottom: 14px;
+    text-align: center;
+  }
+
+  .svg-container svg {
+    width: 100%;
+    height: auto;
+    max-height: 245px;
+    display: block;
+    margin: 0 auto;
+  }
+
+  /* Single & Multi Choice Options */
+  .options-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+
+  .option-card {
+    background: var(--bg-card-elevated);
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    padding: 13px 14px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    cursor: pointer;
+    transition: border-color 0.15s ease, background 0.15s ease;
+  }
+
+  .option-card.selected {
+    border-color: var(--accent-amber);
+    background: rgba(245, 158, 11, 0.13);
+  }
+
+  .option-marker {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 2px solid var(--text-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 800;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .option-card.multi .option-marker {
+    border-radius: 6px;
+  }
+
+  .option-card.selected .option-marker {
+    border-color: var(--accent-amber);
+    background: var(--accent-amber);
+    color: #0b0f14;
+  }
+
+  .option-text {
+    font-size: 15px;
+    color: var(--text-primary);
+    line-height: 1.4;
+  }
+
+  /* Matching Select Rows */
+  .match-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .match-row {
+    background: var(--bg-card-elevated);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 12px;
+  }
+
+  .match-left {
+    font-weight: 700;
+    font-size: 15px;
+    margin-bottom: 8px;
+    color: #ffffff;
+  }
+
+  .match-select {
+    width: 100%;
+    padding: 11px 12px;
+    border-radius: 8px;
+    background: #0b0f14;
+    color: #ffffff;
+    border: 1px solid var(--accent-amber);
+    font-size: 14px;
+    line-height: 1.35;
+  }
+
+  /* Ranking Controls */
+  .rank-list {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    margin-bottom: 16px;
+  }
+
+  .rank-item {
+    background: var(--bg-card-elevated);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 10px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .rank-pos {
+    width: 26px;
+    height: 26px;
+    border-radius: 6px;
+    background: var(--accent-amber);
+    color: #0b0f14;
+    font-weight: 800;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .rank-label {
+    flex: 1;
+    font-size: 14px;
+    line-height: 1.35;
+  }
+
+  .rank-btns {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .rank-btn {
+    background: #0b0f14;
+    border: 1px solid var(--border-color);
+    color: #ffffff;
+    border-radius: 6px;
+    width: 36px;
+    height: 30px;
+    font-size: 14px;
+    font-weight: 800;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .rank-btn:disabled {
+    opacity: 0.25;
+    cursor: default;
+  }
+
+  /* Cloze Chip Builder */
+  .cloze-sentence {
+    background: var(--bg-card-elevated);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 14px;
+    font-size: 16px;
+    line-height: 1.9;
+    margin-bottom: 14px;
+  }
+
+  .cloze-slot {
+    display: inline-block;
+    min-width: 126px;
+    padding: 2px 10px;
+    margin: 0 3px;
+    border-radius: 8px;
+    border: 2px dashed var(--accent-amber);
+    background: #0b0f14;
+    color: var(--accent-amber);
+    font-weight: 700;
+    text-align: center;
+    cursor: pointer;
+    vertical-align: middle;
+  }
+
+  .cloze-slot.filled {
+    border-style: solid;
+    background: rgba(245, 158, 11, 0.18);
+    color: #ffffff;
+  }
+
+  .chips-bank {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+
+  .chip-btn {
+    padding: 9px 14px;
+    border-radius: 10px;
+    background: #0b0f14;
+    border: 1px solid var(--accent-emerald);
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  .chip-btn.used {
+    opacity: 0.3;
+    pointer-events: none;
+  }
+
+  /* Results Screen */
+  .result-hero {
+    text-align: center;
+    padding: 16px 10px;
+  }
+
+  .grade-circle {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    margin: 0 auto 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    border: 4px solid;
+  }
+
+  .grade-5 {
+    background: rgba(34, 197, 94, 0.15);
+    border-color: var(--success);
+    color: var(--success);
+  }
+
+  .grade-4 {
+    background: rgba(56, 189, 248, 0.15);
+    border-color: var(--accent-blue);
+    color: var(--accent-blue);
+  }
+
+  .grade-3 {
+    background: rgba(245, 158, 11, 0.15);
+    border-color: var(--accent-amber);
+    color: var(--accent-amber);
+  }
+
+  .grade-number {
+    font-size: 40px;
+    line-height: 1;
+  }
+
+  .grade-word {
+    font-size: 11px;
+    text-transform: uppercase;
+    margin-top: 3px;
+  }
+
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin: 16px 0;
+  }
+
+  .stat-box {
+    background: var(--bg-card-elevated);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 10px 6px;
+    text-align: center;
+  }
+
+  .stat-val {
+    font-size: 18px;
+    font-weight: 800;
+    color: #ffffff;
+  }
+
+  .stat-lbl {
+    font-size: 12px;
+    color: var(--text-secondary);
+  }
+
+  .review-card {
+    background: var(--bg-card-elevated);
+    border-radius: 12px;
+    padding: 14px;
+    margin-bottom: 10px;
+    border-left: 4px solid var(--border-color);
+  }
+
+  .review-card.ok {
+    border-left-color: var(--success);
+  }
+
+  .review-card.partial {
+    border-left-color: var(--accent-amber);
+  }
+
+  .review-card.bad {
+    border-left-color: var(--danger);
+  }
+
+  .review-q {
+    font-weight: 700;
+    font-size: 15px;
+    margin-bottom: 6px;
+  }
+
+  .review-meta {
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin-bottom: 6px;
+  }
+
+  .review-expl {
+    font-size: 13px;
+    color: #cbd5e1;
+    background: rgba(0, 0, 0, 0.28);
+    padding: 8px 10px;
+    border-radius: 8px;
+  }
+
+  .hidden {
+    display: none !important;
+  }
+</style>
+</head>
+<body>
+
+<div id="watermark-layer">
+  <div class="watermark-grid" id="watermark-grid"></div>
+</div>
+
+<div id="security-shield">
+  <div class="shield-box">
+    <div class="shield-icon">🛡️</div>
+    <div class="shield-title">Экран заблокирован системой защиты</div>
+    <div class="shield-text">
+      Зафиксировано сворачивание окна, потеря фокуса или попытка снимка экрана. Событие записано в протокол тестирования.
+    </div>
+    <button class="btn btn-danger" onclick="dismissShield()">Вернуться к выполнению</button>
+  </div>
+</div>
+
+<div class="container">
+  <!-- Header -->
+  <div class="header-bar">
+    <div class="header-top">
+      <span class="badge-topic">ОБЗР • 9 класс • Психогигиена</span>
+      <span class="progress-text" id="progress-label">Готовность</span>
+    </div>
+    <div class="progress-track">
+      <div class="progress-fill" id="progress-fill"></div>
+    </div>
+  </div>
+
+  <!-- Screen 1: Start -->
+  <div id="start-screen" class="card">
+    <h1>Психическое здоровье и психологическое благополучие</h1>
+    <div class="subtitle">Интерактивный практикум по саморегуляции и психогигиене (повышенный уровень)</div>
+
+    <div class="rules-grid">
+      <div class="rule-item">
+        <strong>Структура теста:</strong> из расширенного банка (<strong>36 заданий</strong>) при каждом запуске случайно отбираются <strong>12 заданий</strong> разного формата (максимум — <strong>20 баллов</strong>).
+      </div>
+      <div class="rule-item">
+        <strong>Пошаговый режим:</strong> задания открываются строго по очереди. Вернуться к закрытому шагу нельзя.
+      </div>
+      <div class="rule-item">
+        <strong>Шкала оценивания:</strong>
+        <div class="grade-legend">
+          <span class="grade-pill" style="color:#22c55e;">15–20 баллов → Оценка «5»</span>
+          <span class="grade-pill" style="color:#38bdf8;">10–14 баллов → Оценка «4»</span>
+          <span class="grade-pill" style="color:#f59e0b;">Меньше 10 баллов → Оценка «3»</span>
+        </div>
+      </div>
+      <div class="rule-item">
+        <strong>Режим контроля:</strong> копирование текста и скриншоты запрещены. Не сворачивайте браузер до завершения работы.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label" for="student-name">Фамилия и Имя ученика</label>
+      <input type="text" id="student-name" class="form-input" placeholder="Например: Ковалёв Максим" autocomplete="off">
+    </div>
+
+    <div class="form-group">
+      <label class="form-label" for="student-class">Класс</label>
+      <input type="text" id="student-class" class="form-input" value="9 класс" autocomplete="off">
+    </div>
+
+    <button class="btn btn-primary" id="start-btn" onclick="startTest()">Начать тестирование</button>
+  </div>
+
+  <!-- Screen 2: Test Accordion -->
+  <div id="test-screen" class="hidden">
+    <div id="accordion-container"></div>
+  </div>
+
+  <!-- Screen 3: Results -->
+  <div id="result-screen" class="hidden">
+    <div class="card result-hero">
+      <div id="grade-badge" class="grade-circle grade-5">
+        <span class="grade-number" id="final-grade">5</span>
+        <span class="grade-word">Оценка</span>
+      </div>
+      <h1 id="result-student-title">Результат</h1>
+      <div class="subtitle" id="result-verdict-text">Отличный уровень саморегуляции и знания темы!</div>
+
+      <div class="stats-row">
+        <div class="stat-box">
+          <div class="stat-val" id="stat-score">0 / 20</div>
+          <div class="stat-lbl">Набрано баллов</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-val" id="stat-correct">0 / 12</div>
+          <div class="stat-lbl">Верных заданий</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-val" id="stat-violations">0</div>
+          <div class="stat-lbl">Нарушений фокуса</div>
+        </div>
+      </div>
+
+      <button class="btn btn-primary" onclick="location.reload()">Пройти новый вариант (12 новых заданий)</button>
+    </div>
+
+    <div class="card">
+      <h2 style="margin:0 0 12px; font-size:18px;">Разбор выполненных заданий</h2>
+      <div id="review-container"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ==========================================
+// РАСШИРЕННЫЙ БАНК ЗАДАНИЙ (36 ЗАДАНИЙ ВЫШЕ СРЕДНЕГО)
+// Пул А: 16 заданий по 1 баллу (выбираются 4)
+// Пул Б: 20 заданий по 2 балла (выбираются 8)
+// Итого в каждом варианте: 12 заданий = 20 баллов
+// ==========================================
+
+const POOL_1PT = [
+  {
+    id: "q1",
+    type: "single",
+    typeLabel: "Метафора «Железо и ОС» • 1 балл",
+    points: 1,
+    prompt: "В современной модели саморегуляции физическое тело сравнивают с «железом» смартфона, а психику — с операционной системой (ОС). Что означает ситуация «перегрева ОС» при исправном теле?",
+    options: [
+      { text: "Полное отсутствие физических нагрузок при избытке свободного времени и спокойного сна", correct: false },
+      { text: "Перегрузку нервной системы фоновыми тревогами, недосыпом и информационным шумом", correct: true },
+      { text: "Внезапное улучшение памяти и скорости реакции перед началом сложного экзамена", correct: false },
+      { text: "Устойчивое состояние внутреннего баланса при полном контроле над своими эмоциями", correct: false }
+    ],
+    explanation: "Даже при хорошем физическом здоровье множество незакрытых «фоновых вкладок» тревоги и информационного шума истощают психику."
+  },
+  {
+    id: "q2",
+    type: "single",
+    typeLabel: "Базовые понятия • 1 балл",
+    points: 1,
+    prompt: "В чём заключается ключевое различие между понятиями «психическое здоровье» и «психологическое благополучие»?",
+    options: [
+      { text: "Психическое здоровье зависит только от наследственности, а благополучие — от уровня дохода семьи", correct: false },
+      { text: "Психологическое благополучие нужно только взрослым людям, а психическое здоровье — подросткам", correct: false },
+      { text: "Психическое здоровье означает исправную работу психики, а благополучие — гармонию и смысл жизни", correct: true },
+      { text: "Психическое здоровье связано только с памятью человека, а благополучие — с физической выносливостью", correct: false }
+    ],
+    explanation: "Психическое здоровье — это «фундамент» (нормальная работа нервной системы без расстройств), а благополучие — «сам дом» (ощущение полноты и смысла жизни)."
+  },
+  {
+    id: "q3",
+    type: "single",
+    typeLabel: "Психогигиена • 1 балл",
+    points: 1,
+    prompt: "Что в современной науке о здоровье называют психогигиеной подростка?",
+    options: [
+      { text: "Систему мер по защите нервной системы от перегрузок, информационного шума и выгорания", correct: true },
+      { text: "Медицинское лечение тяжёлых хронических заболеваний с помощью рецептурных препаратов", correct: false },
+      { text: "Полный отказ от общения со сверстниками и участия в любых учебных проектах школы", correct: false },
+      { text: "Ежедневную проверку пульса и артериального давления после каждой школьной перемены", correct: false }
+    ],
+    explanation: "Психогигиена — это правила ежедневной защиты и восстановления психики (режим сна, цифровой детокс, экологичное общение)."
+  },
+  {
+    id: "q4",
+    type: "single",
+    typeLabel: "Стрессоустойчивость • 1 балл",
+    points: 1,
+    prompt: "Почему стрессоустойчивость сравнивают с «гибким амортизатором», а не с «бетонной стеной»?",
+    options: [
+      { text: "Бетонная стена способна сжиматься под давлением и быстро возвращать исходную форму", correct: false },
+      { text: "Амортизатор полностью запрещает человеку испытывать волнение, грусть или страх", correct: false },
+      { text: "Гибкая психика принимает удар нагрузки, гасит напряжение и быстро восстанавливает ресурс", correct: true },
+      { text: "Стрессоустойчивый человек никогда не сталкивается с экзаменами, спорами и переменами", correct: false }
+    ],
+    explanation: "Жёсткая «стена» при сильном давлении трескается, а гибкая психика адаптируется к стрессу и восстанавливается после нагрузки."
+  },
+  {
+    id: "q5",
+    type: "single",
+    typeLabel: "Крылья благополучия • 1 балл",
+    points: 1,
+    prompt: "Девятиклассник отказался от рискованного поступка «за компанию», опираясь на собственные ценности и здравый смысл, несмотря на насмешки сверстников. Какой критерий психологического благополучия он проявил?",
+    options: [
+      { text: "Автономию — способность принимать самостоятельные решения и противостоять давлению толпы", correct: true },
+      { text: "Информационный перегрев — неспособность отфильтровать чужие мнения в социальной сети", correct: false },
+      { text: "Психологическую зависимость — стремление любой ценой заслужить одобрение окружающих", correct: false },
+      { text: "Эмоциональное выгорание — снижение интереса к общению с одноклассниками и друзьями", correct: false }
+    ],
+    explanation: "Автономия по модели Кэрол Рифф — это внутренняя независимость и умение следовать своим убеждениям."
+  },
+  {
+    id: "q6",
+    type: "single",
+    typeLabel: "Крылья благополучия • 1 балл",
+    points: 1,
+    prompt: "Ученик получил низкий балл за пробный вариант ОГЭ, спокойно проанализировал свои ошибки без самоуничижения и составил план повторения тем. Какой критерий благополучия здесь сработал?",
+    options: [
+      { text: "Принятие себя — объективное отношение к своим сильным и слабым сторонам без саморазрушения", correct: true },
+      { text: "Избегание ответственности — перекладывание вины за результат на сложность заданий", correct: false },
+      { text: "Цифровой детокс — временный отказ от использования смартфона перед ночным сном", correct: false },
+      { text: "Подавление эмоций — запрет на признание собственных затруднений при подготовке", correct: false }
+    ],
+    explanation: "Принятие себя позволяет воспринимать неудачу как рабочую задачу, а не как повод считать себя «неудачником»."
+  },
+  {
+    id: "q7",
+    type: "single",
+    typeLabel: "Крылья благополучия • 1 балл",
+    points: 1,
+    prompt: "Что означает критерий «управление средой» в структуре психологического благополучия школьника?",
+    options: [
+      { text: "Попытку полностью контролировать поступки и мысли всех одноклассников и учителей", correct: false },
+      { text: "Умение организовать своё время, рабочее место и режим дня так, чтобы не тонуть в хаосе", correct: true },
+      { text: "Постоянную смену круга общения при возникновении малейших бытовых разногласий", correct: false },
+      { text: "Отказ от составления расписания ради спонтанного выполнения домашних заданий ночью", correct: false }
+    ],
+    explanation: "Управление средой — это способность навести порядок вокруг себя: распределить нагрузку, убрать отвлекающие факторы и создать условия для отдыха."
+  },
+  {
+    id: "q8",
+    type: "single",
+    typeLabel: "Цифровая психогигиена • 1 балл",
+    points: 1,
+    prompt: "Почему привычка листать короткие видео в смартфоне за 5 минут до сна резко ухудшает качество восстановления нервной системы?",
+    options: [
+      { text: "Экран телефона полностью блокирует работу долговременной памяти на следующие три дня", correct: false },
+      { text: "Яркий свет и быстрая смена кадров удерживают мозг в режиме тревожного возбуждения", correct: true },
+      { text: "Короткие видеоролики увеличивают продолжительность фазы глубокого восстановительного сна", correct: false },
+      { text: "Просмотр ленты перед сном снижает уровень кортизола и ускоряет засыпание подростка", correct: false }
+    ],
+    explanation: "Поток быстрых стимулов перегружает зрительный анализатор и не даёт нервной системе перейти в режим торможения и глубокого сна."
+  },
+  {
+    id: "q9",
+    type: "single",
+    typeLabel: "НЛП-саморегуляция • 1 балл",
+    points: 1,
+    prompt: "Как работает НЛП-техника «Пульт субмодальностей» при сильном волнении перед устным ответом или экзаменом?",
+    options: [
+      { text: "Заставляет человека полностью забыть весь изученный материал за пять минут до старта", correct: false },
+      { text: "Снижает накал тревоги за счёт мысленного уменьшения и обесцвечивания пугающего образа", correct: true },
+      { text: "Увеличивает выброс гормона стресса адреналина для ускорения пульса и дыхания ученика", correct: false },
+      { text: "Заменяет необходимость подготовки к экзамену простым самовнушением без изучения билетов", correct: false }
+    ],
+    explanation: "Мозг считывает интенсивность эмоции по характеристикам (субмодальностям) внутренней картинки: если её уменьшить и сделать чёрно-белой, тревога падает."
+  },
+  {
+    id: "q10",
+    type: "single",
+    typeLabel: "НЛП-саморегуляция • 1 балл",
+    points: 1,
+    prompt: "Какое условие является обязательным для создания рабочего «кинестетического якоря уверенности» в НЛП?",
+    options: [
+      { text: "Выполнять телесный жест нужно в момент усталости, когда нет сил на решение задачи", correct: false },
+      { text: "Соединять жест с пиком реального переживания успеха и спокойной собранности", correct: true },
+      { text: "Использовать один и тот же жест одновременно для страха, обиды и радости", correct: false },
+      { text: "Повторить связку один раз в год без дальнейшего подкрепления в спокойной обстановке", correct: false }
+    ],
+    explanation: "Якорь закрепляется только тогда, когда нейтральный физический стимул накладывается на пик нужного эмоционального состояния."
+  },
+  {
+    id: "q11",
+    type: "single",
+    typeLabel: "НЛП-саморегуляция • 1 балл",
+    points: 1,
+    prompt: "В чём заключается смысл когнитивной техники «Правило 10-10-10» при возникновении острой стрессовой ситуации?",
+    options: [
+      { text: "В оценке значимости события через 10 дней, 10 месяцев и 10 лет для снятия паники", correct: true },
+      { text: "В выполнении десяти глубоких вдохов каждые десять минут на протяжении десяти часов", correct: false },
+      { text: "В записи десяти негативных мыслей в тетрадь перед началом каждой контрольной работы", correct: false },
+      { text: "В ограничении любого разговора со сверстниками ровно десятью короткими фразами", correct: false }
+    ],
+    explanation: "Взгляд на проблему в перспективе 10 дней, 10 месяцев и 10 лет мгновенно убирает «туннельное зрение» паники."
+  },
+  {
+    id: "q12",
+    type: "single",
+    typeLabel: "Служба поддержки • 1 балл",
+    points: 1,
+    prompt: "Какой принцип гарантирует безопасность обращения подростка на Единый общероссийский телефон доверия 8-800-2000-122 (короткий номер 124)?",
+    options: [
+      { text: "Обязательная передача записи разговора классному руководителю и родителям ученика", correct: false },
+      { text: "Полная анонимность, бесплатность звонка и конфиденциальность беседы с психологом", correct: true },
+      { text: "Необходимость предъявить паспортные данные и номер школы перед началом консультации", correct: false },
+      { text: "Приём звонков исключительно в будние дни в дневные учебные часы с 9:00 до 17:00", correct: false }
+    ],
+    explanation: "Телефон доверия работает 24/7, звонок бесплатный, номер не определяется, а назвать можно любое вымышленное имя."
+  },
+  {
+    id: "q13",
+    type: "single",
+    typeLabel: "Критический верификатор • 1 балл",
+    points: 1,
+    prompt: "Оцените утверждение: «Психологическое благополучие — это состояние, при котором человек вообще не испытывает грусти, злости или волнения». Какой вывод верен?",
+    options: [
+      { text: "Тезис верен, ведь психически здоровый человек всегда находится в приподнятом настроении", correct: false },
+      { text: "Тезис верен, поскольку любые отрицательные эмоции разрушают нервную систему за один день", correct: false },
+      { text: "Тезис неверен, так как здоровый человек проживает все эмоции, но умеет ими управлять", correct: true },
+      { text: "Тезис неверен, потому что психологическое благополучие не связано с эмоциональной сферой", correct: false }
+    ],
+    explanation: "Все эмоции нормальны и выполняют сигнальную функцию. Благополучие — не отсутствие тревоги или грусти, а умение не застревать в них."
+  },
+  {
+    id: "q14",
+    type: "single",
+    typeLabel: "Критический верификатор • 1 балл",
+    points: 1,
+    prompt: "Оцените утверждение: «Если у человека нет психических заболеваний, его психологическое благополучие автоматически находится на высоком уровне». Какой вывод верен?",
+    options: [
+      { text: "Утверждение верно, так как отсутствие диагноза гарантирует человеку ощущение счастья", correct: false },
+      { text: "Утверждение неверно, потому что можно не болеть, но жить в апатии и без жизненных целей", correct: true },
+      { text: "Утверждение верно, ведь психическое здоровье и психологическое благополучие — синонимы", correct: false },
+      { text: "Утверждение неверно, так как психологическое благополучие встречается только при заболеваниях", correct: false }
+    ],
+    explanation: "Отсутствие болезни («фундамент») ещё не означает построенного «дома» — наполненной и осмысленной жизни."
+  },
+  {
+    id: "q15",
+    type: "single",
+    typeLabel: "Критический верификатор • 1 балл",
+    points: 1,
+    prompt: "Оцените утверждение: «Сильный человек должен терпеть хроническую бессонницу и апатию в одиночку, не обращаясь к психологу». Какой вывод является грамотным?",
+    options: [
+      { text: "Тезис верен, поскольку обращение за помощью означает полную несамостоятельность личности", correct: false },
+      { text: "Тезис верен, так как состояние затяжной апатии всегда проходит само по себе через год", correct: false },
+      { text: "Тезис неверен, потому что вовремя запросить поддержку специалиста — зрелый шаг заботы о себе", correct: true },
+      { text: "Тезис неверен, ведь школьный психолог решает только вопросы успеваемости по математике", correct: false }
+    ],
+    explanation: "Если состояние «красной батареи» держится дольше двух недель, обращение к психологу или родителям — проявление зрелости, а не слабости."
+  },
+  {
+    id: "q16",
+    type: "single",
+    typeLabel: "Критический верификатор • 1 балл",
+    points: 1,
+    prompt: "Оцените утверждение: «НЛП-техники саморегуляции позволяют сдать сложный экзамен без изучения предмета за счёт одного самовнушения». Какой вывод верен?",
+    options: [
+      { text: "Утверждение верно, так как правильный настрой полностью заменяет знания по школьной программе", correct: false },
+      { text: "Утверждение неверно, потому что техники снимают лишнюю панику и помогают применить знания", correct: true },
+      { text: "Утверждение верно, поскольку кинестетический якорь автоматически подсказывает верные ответы", correct: false },
+      { text: "Утверждение неверно, так как техники саморегуляции усиливают волнение перед началом теста", correct: false }
+    ],
+    explanation: "Саморегуляция убирает эмоциональный «шум» и панику, позволяя мозгу спокойно вспомнить то, что ученик выучил."
+  }
+];
+
+const POOL_2PT = [
+  {
+    id: "m1",
+    type: "multi",
+    typeLabel: "Фундамент психического здоровья (выбор 3 из 5) • 2 балла",
+    points: 2,
+    hint: "Отметьте ровно 3 признака психического здоровья.",
+    prompt: "Какие ТРИ характеристики описывают психически здорового человека согласно современным представлениям?",
+    options: [
+      { text: "Адекватное восприятие реальности и критическая оценка своих поступков", correct: true },
+      { text: "Способность справляться с обычными жизненными стрессами и учебной нагрузкой", correct: true },
+      { text: "Умение выстраивать конструктивное общение и сотрудничество с другими людьми", correct: true },
+      { text: "Полное отсутствие любых переживаний при потере близких или серьёзных неудачах", correct: false },
+      { text: "Постоянное стремление избегать любой ответственности и сложных жизненных задач", correct: false }
+    ],
+    explanation: "Психическое здоровье проявляется в ясности мышления, устойчивости к повседневным стрессам и способности взаимодействовать с обществом."
+  },
+  {
+    id: "m2",
+    type: "multi",
+    typeLabel: "Шесть крыльев благополучия (выбор 3 из 5) • 2 балла",
+    points: 2,
+    hint: "Отметьте ровно 3 критерия модели Кэрол Рифф.",
+    prompt: "Какие ТРИ составляющие входят в модель «шести крыльев психологического благополучия» личности?",
+    options: [
+      { text: "Наличие жизненных целей и ощущение осмысленности своих ежедневных усилий", correct: true },
+      { text: "Личностный рост — чувство развития и освоения новых навыков и горизонтов", correct: true },
+      { text: "Позитивные отношения с окружающими, основанные на взаимном доверии и поддержке", correct: true },
+      { text: "Материальное превосходство над сверстниками и высокая популярность в социальных сетях", correct: false },
+      { text: "Полное подчинение своих интересов ожиданиям случайного окружения ради одобрения", correct: false }
+    ],
+    explanation: "Модель психологического благополучия включает: принятие себя, автономию, управление средой, личностный рост, позитивные отношения и жизненные цели."
+  },
+  {
+    id: "m3",
+    type: "multi",
+    typeLabel: "Энергоаудит: красная зона (выбор 2 из 5) • 2 балла",
+    points: 2,
+    hint: "Отметьте ровно 2 главных «пожирателя» энергии.",
+    prompt: "Какие ДВА фактора относятся к «красной зоне перегрева» и быстрее всего истощают психический ресурс девятиклассника?",
+    options: [
+      { text: "Хронический недосып в сочетании с ночным скроллингом новостных и видеолент", correct: true },
+      { text: "Постоянное сравнение своей реальной жизни с отредактированными образами блогеров", correct: true },
+      { text: "Составление короткого списка из трёх приоритетных задач на предстоящий день", correct: false },
+      { text: "Пешая прогулка на свежем воздухе без наушников и уведомлений в течение сорока минут", correct: false },
+      { text: "Своевременное обращение за разъяснением сложной темы к учителю или однокласснику", correct: false }
+    ],
+    explanation: "Ночной скроллинг и токсичное самосравнение создают постоянный фоновый стресс и истощают нервную систему."
+  },
+  {
+    id: "m4",
+    type: "multi",
+    typeLabel: "Психогигиена: зелёная зона (выбор 3 из 5) • 2 балла",
+    points: 2,
+    hint: "Отметьте ровно 3 эффективных правила психогигиены.",
+    prompt: "Какие ТРИ привычки относятся к грамотной ежедневной психогигиене и помогают поддерживать «заряд батареи»?",
+    options: [
+      { text: "Информационная пауза: отказ от экрана смартфона за один час до отхода ко сну", correct: true },
+      { text: "Чередование умственной нагрузки с физической активностью и пребыванием на воздухе", correct: true },
+      { text: "Поддержание доверительного общения с друзьями и семьёй без токсичных конфликтов", correct: true },
+      { text: "Попытка выучить весь годовой курс предмета за одну бессонную ночь перед экзаменом", correct: false },
+      { text: "Одновременное выполнение уроков, просмотр сериала и переписка в пяти чатах", correct: false }
+    ],
+    explanation: "Режим сна, переключение на движение и живое поддерживающее общение — главные «зарядные устройства» для психики."
+  },
+  {
+    id: "m5",
+    type: "multi",
+    typeLabel: "Телефон доверия (выбор 2 из 5) • 2 балла",
+    points: 2,
+    hint: "Отметьте ровно 2 верных положения.",
+    prompt: "Какие ДВА утверждения о работе Единого общероссийского телефона доверия 8-800-2000-122 (короткий номер 124) являются верными?",
+    options: [
+      { text: "Позвонить могут как сами дети и подростки, так и их родители по вопросам воспитания", correct: true },
+      { text: "Звонок является бесплатным с любого телефона и работает круглосуточно без выходных", correct: true },
+      { text: "Консультант обязан сообщить директору школы о факте обращения ученика за помощью", correct: false },
+      { text: "Служба принимает обращения только по вопросам записи на платный приём к врачу", correct: false },
+      { text: "Для соединения с психологом необходимо продиктовать номер медицинского полиса", correct: false }
+    ],
+    explanation: "Служба 8-800-2000-122 (124) работает 24/7 бесплатно и анонимно для детей, подростков и родителей по всей России."
+  },
+  {
+    id: "m6",
+    type: "multi",
+    typeLabel: "Сигналы «красной батареи» (выбор 2 из 5) • 2 балла",
+    points: 2,
+    hint: "Отметьте ровно 2 тревожных признака.",
+    prompt: "Какие ДВА состояния, сохраняющиеся более двух недель подряд, служат сигналом для обязательного обращения за помощью к специалисту или родителям?",
+    options: [
+      { text: "Стойкая апатия, потеря интереса к любимым занятиям и постоянное чувство бессилия", correct: true },
+      { text: "Длительная бессонница или резкое нарушение сна в сочетании с неконтролируемой тревогой", correct: true },
+      { text: "Кратковременное волнение за десять минут до выхода к доске на контрольном уроке", correct: false },
+      { text: "Лёгкая физическая усталость вечером после интенсивной спортивной тренировки", correct: false },
+      { text: "Огорчение в течение одного вечера из-за проигрыша любимой футбольной команды", correct: false }
+    ],
+    explanation: "Кратковременные эмоции естественны, но затяжная апатия и нарушение сна более 2 недель требуют поддержки специалиста."
+  },
+  {
+    id: "match1",
+    type: "match",
+    typeLabel: "Сопоставление понятий • 2 балла",
+    points: 2,
+    prompt: "Сопоставьте ключевые термины темы с их точным значением:",
+    pairs: [
+      { left: "Психическое здоровье", right: "Исправная работа нервной системы, ясность мышления и способность справляться со стрессом" },
+      { left: "Психологическое благополучие", right: "Внутреннее ощущение гармонии, удовлетворённости жизнью, принятия себя и наличия целей" },
+      { left: "Психогигиена", right: "Система ежедневных правил защиты психики от перегрузок и информационного шума" },
+      { left: "Стрессоустойчивость", right: "Способность выдерживать психологическое давление без срывов и быстро восстанавливать силы" }
+    ],
+    explanation: "Разграничение этих четырёх понятий позволяет точно оценивать и укреплять своё внутреннее состояние."
+  },
+  {
+    id: "match2",
+    type: "match",
+    typeLabel: "Крылья благополучия • 2 балла",
+    points: 2,
+    prompt: "Сопоставьте критерий психологического благополучия с его проявлением в жизни подростка:",
+    pairs: [
+      { left: "Автономия", right: "Умение сказать «нет» компании и принять самостоятельное решение своим умом" },
+      { left: "Принятие себя", right: "Спокойное признание своих слабых мест без самоуничижения и паники после ошибки" },
+      { left: "Управление средой", right: "Грамотная организация режима дня, рабочего стола и времени подготовки к ОГЭ" },
+      { left: "Личностный рост", right: "Освоение нового навыка и ощущение, что за полгода ты стал сильнее и опытнее" }
+    ],
+    explanation: "Каждое из «шести крыльев» проявляется в конкретных ежедневных выборах и привычках человека."
+  },
+  {
+    id: "match3",
+    type: "match",
+    typeLabel: "Инструменты НЛП • 2 балла",
+    points: 2,
+    prompt: "Сопоставьте технику саморегуляции с принципом её работы:",
+    pairs: [
+      { left: "Пульт субмодальностей", right: "Мысленное уменьшение, удаление и обесцвечивание тревожного образа в воображении" },
+      { left: "Кинестетический якорь", right: "Связывание пикового состояния уверенности с незаметным телесным жестом пальцев" },
+      { left: "Правило 10-10-10", right: "Оценка значимости проблемы в перспективе дней, месяцев и лет для снятия паники" },
+      { left: "Рефрейминг «Железо и ОС»", right: "Смена взгляда на усталость: переход от самообвинения к закрытию фоновых вкладок" }
+    ],
+    explanation: "Инструменты НЛП работают через визуальный (образы), кинестетический (телесный якорь) и когнитивный (рамка смысла) каналы."
+  },
+  {
+    id: "match4",
+    type: "match",
+    typeLabel: "Энергоаудит: утечка и решение • 2 балла",
+    points: 2,
+    prompt: "Сопоставьте типовую «утечку энергии» девятиклассника с наиболее точным способом перезагрузки:",
+    pairs: [
+      { left: "Паника из-за огромного объёма подготовки к ОГЭ", right: "Дробление задачи на конкретный план из трёх небольших шагов на сегодня" },
+      { left: "Информационный шум от десятков чатов и уведомлений", right: "Режим «Не беспокоить» на время учёбы и прогулка без наушников" },
+      { left: "Острое волнение за две минуты до устного ответа", right: "Активация кинестетического якоря спокойствия и ровный глубокий выдох" },
+      { left: "Застревание в обиде после мелкого спора в сети", right: "Применение «Правила 10-10-10» для возвращения реального масштаба события" }
+    ],
+    explanation: "Для каждого типа перегрузки существует свой точечный инструмент саморегуляции."
+  },
+  {
+    id: "rank1",
+    type: "rank",
+    typeLabel: "Алгоритм НЛП-техники • 2 балла",
+    points: 2,
+    hint: "Используйте кнопки ▲ и ▼, чтобы выстроить шаги от 1 до 4.",
+    prompt: "Выстройте правильную последовательность выполнения НЛП-техники «Пульт субмодальностей» для снижения тревоги:",
+    items: [
+      "Зафиксировать перед внутренним взором картинку ситуации, вызывающей волнение",
+      "Мысленно отодвинуть этот образ далеко назад, словно на экран в конце длинного зала",
+      "Уменьшить картинку до размера спичечного коробка, сделать её чёрно-белой и убрать звук",
+      "Отметить снижение напряжения в теле и переключить внимание на конкретное действие"
+    ],
+    explanation: "Последовательное изменение расстояния, размера, цвета и звука образа снижает эмоциональный отклик нервной системы."
+  },
+  {
+    id: "rank2",
+    type: "rank",
+    typeLabel: "Установка якоря в НЛП • 2 балла",
+    points: 2,
+    hint: "Расставьте этапы от 1 до 4.",
+    prompt: "Выстройте правильный алгоритм создания «Кинестетического якоря уверенности»:",
+    items: [
+      "Вспомнить реальный момент личного успеха, расправить плечи и выровнять дыхание",
+      "Дождаться пика переживания уверенности и внутренней собранности в теле",
+      "На пике состояния соединить большой и безымянный пальцы правой руки на 5 секунд",
+      "Повторить связку 2–3 раза, чтобы закрепить условный рефлекс спокойствия"
+    ],
+    explanation: "Главное правило якорения — ставить телесный стимул строго на пике ресурсного состояния, а не после его спада."
+  },
+  {
+    id: "rank3",
+    type: "rank",
+    typeLabel: "Выход из перегрева • 2 балла",
+    points: 2,
+    hint: "Выстройте логический порядок действий от 1 до 4.",
+    prompt: "Выстройте правильный алгоритм «перезагрузки ОС» при сильном умственном переутомлении вечером:",
+    items: [
+      "Остановить работу и полностью закрыть лишние вкладки и уведомления на смартфоне",
+      "Сделать 15-минутную физическую разминку или прогулку на свежем воздухе без экрана",
+      "Составить короткий список из трёх главных дел на завтра, чтобы разгрузить память",
+      "Лечь спать в проветренной комнате не позднее привычного времени для восстановления мозга"
+    ],
+    explanation: "Сначала отключаем поток стимулов, затем переключаем тело на движение, выгружаем задачи на бумагу и обеспечиваем качественный сон."
+  },
+  {
+    id: "rank4",
+    type: "rank",
+    typeLabel: "Уровни устойчивости • 2 балла",
+    points: 2,
+    hint: "Расставьте ступени от 1 (базовый фундамент) до 4 (высший уровень).",
+    prompt: "Расположите уровни психологического развития личности от базового фундамента к вершине благополучия:",
+    items: [
+      "Сохранность психического здоровья и адекватное восприятие окружающего мира",
+      "Соблюдение ежедневной психогигиены, режима сна и информационного баланса",
+      "Владение навыками саморегуляции эмоций и стрессоустойчивость в сложных ситуациях",
+      "Полноценное психологическое благополучие, самореализация и наличие жизненных целей"
+    ],
+    explanation: "На фундаменте психического здоровья через психогигиену и саморегуляцию строится зрелое психологическое благополучие."
+  },
+  {
+    id: "svg1",
+    type: "single",
+    typeLabel: "Диагностика ОС (SVG-схема) • 2 балла",
+    points: 2,
+    svg: `<svg viewBox="0 0 420 205" xmlns="http://www.w3.org/2000/svg">
+      <rect width="420" height="205" fill="#080c11"/>
+      <!-- Left Phone: Overheated -->
+      <rect x="28" y="14" width="160" height="176" rx="16" fill="#141a22" stroke="#f97316" stroke-width="2.5"/>
+      <text x="108" y="36" text-anchor="middle" fill="#f97316" font-size="12" font-weight="bold">СИСТЕМА А: ПЕРЕГРЕВ</text>
+      <!-- Battery 4% -->
+      <rect x="46" y="46" width="124" height="18" rx="4" fill="#0b0f14" stroke="#ef4444" stroke-width="1.5"/>
+      <rect x="48" y="48" width="10" height="14" rx="2" fill="#ef4444"/>
+      <text x="108" y="59" text-anchor="middle" fill="#fca5a5" font-size="11" font-weight="bold">Заряд: 4% • 89°C</text>
+      <!-- Background tabs -->
+      <rect x="46" y="72" width="124" height="22" rx="5" fill="#7c2d12" opacity="0.6"/>
+      <text x="108" y="87" text-anchor="middle" fill="#fed7aa" font-size="10">48 фоновых вкладок</text>
+      <rect x="46" y="100" width="124" height="22" rx="5" fill="#7c2d12" opacity="0.6"/>
+      <text x="108" y="115" text-anchor="middle" fill="#fed7aa" font-size="10">Скроллинг в 02:30 ночи</text>
+      <rect x="46" y="128" width="124" height="22" rx="5" fill="#7c2d12" opacity="0.6"/>
+      <text x="108" y="143" text-anchor="middle" fill="#fed7aa" font-size="10">Сравнение с блогерами</text>
+      <text x="108" y="174" text-anchor="middle" fill="#ef4444" font-size="11" font-weight="bold">Сбой внимания и апатия</text>
+
+      <!-- Right Phone: Resource -->
+      <rect x="232" y="14" width="160" height="176" rx="16" fill="#141a22" stroke="#10b981" stroke-width="2.5"/>
+      <text x="312" y="36" text-anchor="middle" fill="#10b981" font-size="12" font-weight="bold">СИСТЕМА Б: РЕСУРС</text>
+      <!-- Battery 94% -->
+      <rect x="250" y="46" width="124" height="18" rx="4" fill="#0b0f14" stroke="#10b981" stroke-width="1.5"/>
+      <rect x="252" y="48" width="114" height="14" rx="2" fill="#10b981"/>
+      <text x="312" y="59" text-anchor="middle" fill="#052e16" font-size="11" font-weight="bold">Заряд: 94% • 36.6°C</text>
+      <!-- Healthy habits -->
+      <rect x="250" y="72" width="124" height="22" rx="5" fill="#064e3b" opacity="0.7"/>
+      <text x="312" y="87" text-anchor="middle" fill="#a7f3d0" font-size="10">Фокус на 1 задаче</text>
+      <rect x="250" y="100" width="124" height="22" rx="5" fill="#064e3b" opacity="0.7"/>
+      <text x="312" y="115" text-anchor="middle" fill="#a7f3d0" font-size="10">Сон 8 ч • без экрана</text>
+      <rect x="250" y="128" width="124" height="22" rx="5" fill="#064e3b" opacity="0.7"/>
+      <text x="312" y="143" text-anchor="middle" fill="#a7f3d0" font-size="10">Прогулка и поддержка</text>
+      <text x="312" y="174" text-anchor="middle" fill="#34d399" font-size="11" font-weight="bold">Ясность ума и энергия</text>
+    </svg>`,
+    prompt: "Изучите диагностическую схему двух состояний «операционной системы» психики. Какой главный вывод следует из сравнения Системы А и Системы Б?",
+    options: [
+      { text: "Истощение психики вызывается фоновыми утечками энергии, а психогигиена возвращает системе ресурс", correct: true },
+      { text: "Количество открытых фоновых процессов никак не влияет на скорость работы внимания и памяти", correct: false },
+      { text: "Для восстановления психической энергии достаточно увеличить яркость экрана смартфона перед сном", correct: false },
+      { text: "Состояние перегрева возникает исключительно у людей с тяжёлыми физическими заболеваниями", correct: false }
+    ],
+    explanation: "Схема показывает работу психогигиены: закрытие «фоновых вкладок» (недосып, скроллинг, сравнение себя с другими) восстанавливает заряд психики."
+  },
+  {
+    id: "svg2",
+    type: "single",
+    typeLabel: "Профиль благополучия (SVG-схема) • 2 балла",
+    points: 2,
+    svg: `<svg viewBox="0 0 420 215" xmlns="http://www.w3.org/2000/svg">
+      <rect width="420" height="215" fill="#080c11"/>
+      <!-- Center node -->
+      <circle cx="210" cy="108" r="34" fill="#1c2430" stroke="#f59e0b" stroke-width="2"/>
+      <text x="210" y="105" text-anchor="middle" fill="#f8fafc" font-size="10" font-weight="bold">ПРОФИЛЬ</text>
+      <text x="210" y="118" text-anchor="middle" fill="#f59e0b" font-size="10" font-weight="bold">УЧЕНИКА</text>
+
+      <!-- 1. Top: Принятие себя (OK) -->
+      <rect x="145" y="10" width="130" height="32" rx="8" fill="#064e3b" stroke="#10b981" stroke-width="1.5"/>
+      <text x="210" y="30" text-anchor="middle" fill="#a7f3d0" font-size="11" font-weight="bold">1. Принятие себя ✓</text>
+      <line x1="210" y1="42" x2="210" y2="74" stroke="#10b981" stroke-width="2"/>
+
+      <!-- 2. Top-Right: Личностный рост (OK) -->
+      <rect x="280" y="48" width="130" height="32" rx="8" fill="#064e3b" stroke="#10b981" stroke-width="1.5"/>
+      <text x="345" y="68" text-anchor="middle" fill="#a7f3d0" font-size="11" font-weight="bold">2. Личностный рост ✓</text>
+      <line x1="280" y1="74" x2="241" y2="95" stroke="#10b981" stroke-width="2"/>
+
+      <!-- 3. Bottom-Right: Позитивные отношения (OK) -->
+      <rect x="280" y="136" width="130" height="32" rx="8" fill="#064e3b" stroke="#10b981" stroke-width="1.5"/>
+      <text x="345" y="156" text-anchor="middle" fill="#a7f3d0" font-size="11" font-weight="bold">3. Отношения ✓</text>
+      <line x1="280" y1="142" x2="241" y2="121" stroke="#10b981" stroke-width="2"/>
+
+      <!-- 4. Bottom: Жизненные цели (OK) -->
+      <rect x="145" y="174" width="130" height="32" rx="8" fill="#064e3b" stroke="#10b981" stroke-width="1.5"/>
+      <text x="210" y="194" text-anchor="middle" fill="#a7f3d0" font-size="11" font-weight="bold">4. Жизненные цели ✓</text>
+      <line x1="210" y1="174" x2="210" y2="142" stroke="#10b981" stroke-width="2"/>
+
+      <!-- 5. Bottom-Left: Управление средой (OK) -->
+      <rect x="10" y="136" width="130" height="32" rx="8" fill="#064e3b" stroke="#10b981" stroke-width="1.5"/>
+      <text x="75" y="156" text-anchor="middle" fill="#a7f3d0" font-size="11" font-weight="bold">5. Управление средой ✓</text>
+      <line x1="140" y1="142" x2="179" y2="121" stroke="#10b981" stroke-width="2"/>
+
+      <!-- 6. Top-Left: ДЕФИЦИТ (?) -->
+      <rect x="10" y="48" width="130" height="32" rx="8" fill="#7f1d1d" stroke="#ef4444" stroke-width="2"/>
+      <text x="75" y="68" text-anchor="middle" fill="#fecaca" font-size="11" font-weight="bold">6. ДЕФИЦИТ (!)</text>
+      <line x1="140" y1="74" x2="179" y2="95" stroke="#ef4444" stroke-width="2" stroke-dasharray="4,3"/>
+    </svg>`,
+    prompt: "Изучите схему шести крыльев психологического благополучия ученика. Пять показателей в норме, но шестое крыло в дефиците: подросток постоянно меняет свои решения под давлением мнений в чате. Какой критерий нужно укрепить?",
+    options: [
+      { text: "Автономию — способность опираться на собственное мнение и личные границы", correct: true },
+      { text: "Физическую выносливость — ежедневный бег на длинные дистанции на стадионе", correct: false },
+      { text: "Сенсорную чувствительность — умение быстрее реагировать на звуковые сигналы", correct: false },
+      { text: "Цифровую активность — увеличение числа подписок на популярные каналы в сети", correct: false }
+    ],
+    explanation: "В шестиграннике Кэрол Рифф недостающим звеном является «Автономия» — внутренняя независимость от давления толпы."
+  },
+  {
+    id: "svg3",
+    type: "single",
+    typeLabel: "Пульт субмодальностей НЛП (SVG) • 2 балла",
+    points: 2,
+    svg: `<svg viewBox="0 0 420 195" xmlns="http://www.w3.org/2000/svg">
+      <rect width="420" height="195" fill="#080c11"/>
+      <!-- Before box -->
+      <rect x="16" y="16" width="170" height="162" rx="12" fill="#141a22" stroke="#ef4444" stroke-width="1.8"/>
+      <text x="101" y="36" text-anchor="middle" fill="#ef4444" font-size="11" font-weight="bold">ДО НАСТРОЙКИ (ТРЕВОГА)</text>
+      <rect x="34" y="48" width="134" height="84" rx="6" fill="#dc2626" opacity="0.8"/>
+      <text x="101" y="88" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="bold">ОГРОМНЫЙ ЯРКИЙ</text>
+      <text x="101" y="104" text-anchor="middle" fill="#ffffff" font-size="11">ОБРАЗ БЛИЗКО + ШУМ</text>
+      <text x="101" y="156" text-anchor="middle" fill="#fca5a5" font-size="11">Пульс: 115 уд/мин</text>
+
+      <!-- Arrow -->
+      <path d="M 193 97 L 225 97" stroke="#f59e0b" stroke-width="3"/>
+      <polygon points="231,97 221,91 221,103" fill="#f59e0b"/>
+      <text x="210" y="84" text-anchor="middle" fill="#f59e0b" font-size="10" font-weight="bold">НЛП</text>
+
+      <!-- After box -->
+      <rect x="234" y="16" width="170" height="162" rx="12" fill="#141a22" stroke="#10b981" stroke-width="1.8"/>
+      <text x="319" y="36" text-anchor="middle" fill="#10b981" font-size="11" font-weight="bold">ПОСЛЕ НАСТРОЙКИ (СПОКОЙСТВИЕ)</text>
+      <rect x="252" y="48" width="134" height="84" rx="6" fill="#0b0f14" stroke="#334155"/>
+      <!-- Small grey distant square -->
+      <rect x="301" y="76" width="36" height="24" rx="3" fill="#64748b" stroke="#94a3b8"/>
+      <text x="319" y="118" text-anchor="middle" fill="#94a3b8" font-size="10">Малый, дальний, ч/б, тихо</text>
+      <text x="319" y="156" text-anchor="middle" fill="#6ee7b7" font-size="11">Пульс: 74 уд/мин</text>
+    </svg>`,
+    prompt: "Изучите схему работы с внутренним образом в НЛП. Какие настройки «пульта субмодальностей» переводят нервную систему из режима паники в спокойное состояние?",
+    options: [
+      { text: "Уменьшение размера образа, удаление его на дистанцию, перевод в чёрно-белый цвет и тишину", correct: true },
+      { text: "Увеличение яркости картинки на весь экран, приближение вплотную и усиление громкости звука", correct: false },
+      { text: "Добавление ярких красных вспышек вокруг тревожного события и ускорение его движения", correct: false },
+      { text: "Многократное прокручивание пугающего кадра в крупном плане без изменения его размеров", correct: false }
+    ],
+    explanation: "Уменьшение размера, удаление, обесцвечивание и выключение звука снижают сенсорную интенсивность образа и успокаивают вегетативную систему."
+  },
+  {
+    id: "cloze1",
+    type: "cloze",
+    typeLabel: "Сборка правила (Фундамент и Дом) • 2 балла",
+    points: 2,
+    hint: "Нажимайте на слова в банке ниже, чтобы заполнить пропуски по порядку (нажатие на пропуск очищает его).",
+    prompt: "Восстановите формулу взаимосвязи психического здоровья и психологического благополучия:",
+    parts: [
+      "В современной психологии психическое здоровье сравнивают с прочным ",
+      ", который обеспечивает исправную работу нервной системы, а психологическое ",
+      " — это построенный на нём уютный ",
+      ", наполненный смыслом, целями и гармонией."
+    ],
+    answers: ["фундаментом", "благополучие", "дом"],
+    chips: ["фундаментом", "благополучие", "дом", "вирусом", "экраном"],
+    explanation: "Психическое здоровье служит фундаментом, а психологическое благополучие — полноценным домом качества жизни."
+  },
+  {
+    id: "cloze2",
+    type: "cloze",
+    typeLabel: "Сборка формулы НЛП-саморегуляции • 2 балла",
+    points: 2,
+    hint: "Нажимайте на слова в банке ниже, чтобы заполнить пропуски по порядку (нажатие на пропуск очищает его).",
+    prompt: "Заполните пропуски в описании нейролингвистических инструментов управления состоянием:",
+    parts: [
+      "Чтобы быстро снизить тревогу, можно изменить ",
+      " тревожного образа (уменьшить и обесцветить его), включить телесный ",
+      " уверенности или применить правило 10-10-10, меняющее ",
+      " события."
+    ],
+    answers: ["субмодальности", "якорь", "масштаб"],
+    chips: ["субмодальности", "якорь", "масштаб", "панику", "диагноз"],
+    explanation: "Три инструмента НЛП: настройка субмодальностей образа, кинестетический якорь и изменение временного масштаба."
+  },
+  {
+    id: "cloze3",
+    type: "cloze",
+    typeLabel: "Сборка правила психогигиены и безопасности • 2 балла",
+    points: 2,
+    hint: "Нажимайте на слова в банке ниже, чтобы заполнить пропуски по порядку (нажатие на пропуск очищает его).",
+    prompt: "Восстановите правило защиты нервной системы и обращения за поддержкой:",
+    parts: [
+      "Ежедневная ",
+      " защищает мозг от перегрева, но если апатия и бессонница держатся дольше ",
+      " недель, важно обратиться к психологу или ",
+      " позвонить на телефон доверия 8-800-2000-122."
+    ],
+    answers: ["психогигиена", "двух", "анонимно"],
+    chips: ["психогигиена", "двух", "анонимно", "десяти", "публично"],
+    explanation: "Психогигиена предотвращает перегрузку, а при симптомах дольше двух недель работает бесплатный и анонимный телефон доверия."
+  }
+];
+
+// ==========================================
+// СОСТОЯНИЕ И УТИЛИТЫ
+// ==========================================
+
+let studentName = "";
+let studentClass = "";
+let selectedQuestions = [];
+let currentStep = 0;
+let userAnswers = [];
+let violations = 0;
+let testActive = false;
+let isSelectInteracting = false;
+
+// Перемешивание Фишера — Йейтса
+function fisherYates(arr) {
+  const copy = [...arr];
+  for (let i = copy.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [copy[i], copy[j]] = [copy[j], copy[i]];
+  }
+  return copy;
+}
+
+// ==========================================
+// ЗАЩИТА ОТ СКРИНШОТОВ, КОПИРОВАНИЯ И СМЕНЫ ФОКУСА
+// ==========================================
+
+document.addEventListener("contextmenu", e => e.preventDefault());
+document.addEventListener("copy", e => e.preventDefault());
+document.addEventListener("cut", e => e.preventDefault());
+document.addEventListener("dragstart", e => e.preventDefault());
+
+document.addEventListener("keydown", e => {
+  if (!testActive) return;
+  const blockedKeys = ["PrintScreen", "F12"];
+  if (
+    blockedKeys.includes(e.key) ||
+    (e.ctrlKey && ["c", "u", "s", "p", "a"].includes(e.key.toLowerCase())) ||
+    (e.ctrlKey && e.shiftKey && ["i", "j", "c", "s"].includes(e.key.toLowerCase())) ||
+    (e.metaKey && e.shiftKey && ["3", "4", "5"].includes(e.key))
+  ) {
+    e.preventDefault();
+    triggerShield();
+  }
+});
+
+document.addEventListener("visibilitychange", () => {
+  if (testActive && document.hidden) {
+    triggerShield();
+  }
+});
+
+window.addEventListener("blur", () => {
+  if (!testActive) return;
+  setTimeout(() => {
+    const activeTag = document.activeElement ? document.activeElement.tagName : "";
+    if (isSelectInteracting || activeTag === "SELECT") {
+      return;
+    }
+    triggerShield();
+  }, 150);
+});
+
+window.addEventListener("focus", () => {
+  isSelectInteracting = false;
+});
+
+function triggerShield() {
+  if (!testActive) return;
+  const shield = document.getElementById("security-shield");
+  if (!shield.classList.contains("active")) {
+    violations++;
+    shield.classList.add("active");
+  }
+}
+
+function dismissShield() {
+  document.getElementById("security-shield").classList.remove("active");
+}
+
+function setupWatermark() {
+  const wmLayer = document.getElementById("watermark-layer");
+  const wmGrid = document.getElementById("watermark-grid");
+  const now = new Date();
+  const timeStr = now.toLocaleTimeString("ru-RU", { hour: "2-digit", minute: "2-digit" });
+  const stamp = `${studentName} (${studentClass}) • ${timeStr}`;
+
+  let html = "";
+  for (let i = 0; i < 42; i++) {
+    html += `<div class="watermark-item">${escapeHtml(stamp)}</div>`;
+  }
+  wmGrid.innerHTML = html;
+  wmLayer.style.display = "block";
+}
+
+function escapeHtml(str) {
+  return String(str)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
+// ==========================================
+// ЗАПУСК И ГЕНЕРАЦИЯ ВАРИАНТА
+// ==========================================
+
+function startTest() {
+  const nameInput = document.getElementById("student-name").value.trim();
+  const classInput = document.getElementById("student-class").value.trim();
+
+  if (nameInput.length < 3) {
+    alert("Пожалуйста, введите Фамилию и Имя перед началом теста.");
+    return;
+  }
+
+  studentName = nameInput;
+  studentClass = classInput || "9 класс";
+
+  // Выбираем 4 вопроса по 1 баллу (из 16) и 8 вопросов по 2 балла (из 20) = 12 вопросов (20 баллов)
+  const picked1 = fisherYates(POOL_1PT).slice(0, 4);
+  const picked2 = fisherYates(POOL_2PT).slice(0, 8);
+  const rawSet = fisherYates([...picked1, ...picked2]);
+
+  selectedQuestions = rawSet.map(q => prepareQuestion(q));
+  userAnswers = new Array(selectedQuestions.length).fill(null);
+  currentStep = 0;
+  violations = 0;
+  testActive = true;
+
+  setupWatermark();
+
+  document.getElementById("start-screen").classList.add("hidden");
+  document.getElementById("test-screen").classList.remove("hidden");
+
+  renderAccordion();
+  updateProgress();
+}
+
+function prepareQuestion(q) {
+  const clone = JSON.parse(JSON.stringify(q));
+  if (clone.type === "single" || clone.type === "multi") {
+    clone.options = fisherYates(clone.options);
+  } else if (clone.type === "match") {
+    clone.rightOptions = fisherYates(clone.pairs.map(p => p.right));
+  } else if (clone.type === "rank") {
+    let shuffled = fisherYates(clone.items);
+    if (JSON.stringify(shuffled) === JSON.stringify(clone.items)) {
+      shuffled.reverse();
+    }
+    clone.currentOrder = shuffled;
+  } else if (clone.type === "cloze") {
+    clone.shuffledChips = fisherYates(clone.chips);
+    clone.filledSlots = new Array(clone.answers.length).fill(null);
+  }
+  return clone;
+}
+
+function updateProgress() {
+  const total = selectedQuestions.length;
+  const pct = Math.round((currentStep / total) * 100);
+  document.getElementById("progress-fill").style.width = pct + "%";
+  document.getElementById("progress-label").textContent =
+    currentStep < total ? `Шаг ${currentStep + 1} из ${total}` : `Завершено: ${total} из ${total}`;
+}
+
+// ==========================================
+// ОТРИСОВКА ПОШАГОВОГО АККОРДЕОНА
+// ==========================================
+
+function renderAccordion() {
+  const container = document.getElementById("accordion-container");
+  container.innerHTML = "";
+
+  selectedQuestions.forEach((q, idx) => {
+    const isCompleted = idx < currentStep;
+    const isActive = idx === currentStep;
+    const isLocked = idx > currentStep;
+
+    const item = document.createElement("div");
+    item.className = `accordion-item ${isActive ? "active" : ""} ${isCompleted ? "completed" : ""} ${isLocked ? "locked" : ""}`;
+    item.id = `step-card-${idx}`;
+
+    let statusText = "Ожидает очереди";
+    if (isCompleted) statusText = "✓ Ответ зафиксирован";
+    if (isActive) statusText = "Текущее задание";
+
+    const headerHtml = `
+      <div class="accordion-header">
+        <div class="acc-left">
+          <div class="step-num">${isCompleted ? "✓" : idx + 1}</div>
+          <div class="acc-title-wrap">
+            <span class="acc-type-label">${escapeHtml(q.typeLabel)}</span>
+            <span class="acc-status-text">${statusText}</span>
+          </div>
+        </div>
+        <span class="points-badge">${q.points} ${q.points === 1 ? "балл" : "балла"}</span>
+      </div>
+    `;
+
+    let bodyHtml = "";
+    if (isActive) {
+      bodyHtml = `<div class="accordion-body">`;
+      if (q.svg) {
+        bodyHtml += `<div class="svg-container">${q.svg}</div>`;
+      }
+      bodyHtml += `<div class="question-prompt">${escapeHtml(q.prompt)}</div>`;
+      if (q.hint) {
+        bodyHtml += `<div class="question-hint">${escapeHtml(q.hint)}</div>`;
+      }
+
+      bodyHtml += `<div id="interactive-area-${idx}"></div>`;
+      bodyHtml += `
+        <button class="btn btn-primary" id="confirm-btn-${idx}" onclick="confirmStep(${idx})" disabled>
+          ${idx === selectedQuestions.length - 1 ? "Завершить тест и узнать оценку" : "Подтвердить ответ →"}
+        </button>
+      </div>`;
+    }
+
+    item.innerHTML = headerHtml + bodyHtml;
+    container.appendChild(item);
+
+    if (isActive) {
+      renderInteractiveWidget(q, idx);
+      setTimeout(() => {
+        item.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      }, 80);
+    }
+  });
+}
+
+function renderInteractiveWidget(q, idx) {
+  const area = document.getElementById(`interactive-area-${idx}`);
+
+  if (q.type === "single") {
+    const letters = ["А", "Б", "В", "Г"];
+    let html = `<div class="options-list">`;
+    q.options.forEach((opt, oIdx) => {
+      html += `
+        <div class="option-card" id="opt-${idx}-${oIdx}" onclick="selectSingle(${idx}, ${oIdx})">
+          <div class="option-marker">${letters[oIdx] || oIdx + 1}</div>
+          <div class="option-text">${escapeHtml(opt.text)}</div>
+        </div>
+      `;
+    });
+    html += `</div>`;
+    area.innerHTML = html;
+  }
+
+  else if (q.type === "multi") {
+    let html = `<div class="options-list">`;
+    q.options.forEach((opt, oIdx) => {
+      html += `
+        <div class="option-card multi" id="opt-${idx}-${oIdx}" onclick="toggleMulti(${idx}, ${oIdx})">
+          <div class="option-marker">✓</div>
+          <div class="option-text">${escapeHtml(opt.text)}</div>
+        </div>
+      `;
+    });
+    html += `</div>`;
+    area.innerHTML = html;
+    userAnswers[idx] = [];
+  }
+
+  else if (q.type === "match") {
+    let html = `<div class="match-list">`;
+    q.pairs.forEach((pair, pIdx) => {
+      html += `
+        <div class="match-row">
+          <div class="match-left">${pIdx + 1}. ${escapeHtml(pair.left)}</div>
+          <select class="match-select" id="match-${idx}-${pIdx}"
+            onmousedown="isSelectInteracting=true"
+            ontouchstart="isSelectInteracting=true"
+            onfocus="isSelectInteracting=true"
+            onchange="onMatchChange(${idx})">
+            <option value="">— Выберите соответствие —</option>
+            ${q.rightOptions.map(ro => `<option value="${escapeHtml(ro)}">${escapeHtml(ro)}</option>`).join("")}
+          </select>
+        </div>
+      `;
+    });
+    html += `</div>`;
+    area.innerHTML = html;
+  }
+
+  else if (q.type === "rank") {
+    userAnswers[idx] = [...q.currentOrder];
+    document.getElementById(`confirm-btn-${idx}`).disabled = false;
+    drawRankList(idx);
+  }
+
+  else if (q.type === "cloze") {
+    userAnswers[idx] = [...q.filledSlots];
+    drawClozeWidget(idx);
+  }
+}
+
+// ==========================================
+// ОБРАБОТЧИКИ МЕХАНИК ЗАДАНИЙ
+// ==========================================
+
+function selectSingle(qIdx, oIdx) {
+  userAnswers[qIdx] = oIdx;
+  const q = selectedQuestions[qIdx];
+  q.options.forEach((_, i) => {
+    const el = document.getElementById(`opt-${qIdx}-${i}`);
+    if (el) el.classList.toggle("selected", i === oIdx);
+  });
+  document.getElementById(`confirm-btn-${qIdx}`).disabled = false;
+}
+
+function toggleMulti(qIdx, oIdx) {
+  const arr = userAnswers[qIdx] || [];
+  const pos = arr.indexOf(oIdx);
+  if (pos === -1) {
+    arr.push(oIdx);
+  } else {
+    arr.splice(pos, 1);
+  }
+  userAnswers[qIdx] = arr;
+
+  const q = selectedQuestions[qIdx];
+  q.options.forEach((_, i) => {
+    const el = document.getElementById(`opt-${qIdx}-${i}`);
+    if (el) el.classList.toggle("selected", arr.includes(i));
+  });
+
+  document.getElementById(`confirm-btn-${qIdx}`).disabled = arr.length === 0;
+}
+
+function onMatchChange(qIdx) {
+  isSelectInteracting = false;
+  const q = selectedQuestions[qIdx];
+  const chosen = [];
+  let allSelected = true;
+
+  q.pairs.forEach((_, pIdx) => {
+    const val = document.getElementById(`match-${qIdx}-${pIdx}`).value;
+    if (!val) allSelected = false;
+    chosen.push(val);
+  });
+
+  userAnswers[qIdx] = chosen;
+  document.getElementById(`confirm-btn-${qIdx}`).disabled = !allSelected;
+}
+
+function drawRankList(qIdx) {
+  const area = document.getElementById(`interactive-area-${qIdx}`);
+  const list = userAnswers[qIdx];
+  let html = `<div class="rank-list">`;
+  list.forEach((text, i) => {
+    html += `
+      <div class="rank-item">
+        <div class="rank-pos">${i + 1}</div>
+        <div class="rank-label">${escapeHtml(text)}</div>
+        <div class="rank-btns">
+          <button type="button" class="rank-btn" onclick="moveRank(${qIdx}, ${i}, -1)" ${i === 0 ? "disabled" : ""}>▲</button>
+          <button type="button" class="rank-btn" onclick="moveRank(${qIdx}, ${i}, 1)" ${i === list.length - 1 ? "disabled" : ""}>▼</button>
+        </div>
+      </div>
+    `;
+  });
+  html += `</div>`;
+  area.innerHTML = html;
+}
+
+function moveRank(qIdx, index, dir) {
+  const list = userAnswers[qIdx];
+  const target = index + dir;
+  if (target < 0 || target >= list.length) return;
+  [list[index], list[target]] = [list[target], list[index]];
+  drawRankList(qIdx);
+}
+
+function drawClozeWidget(qIdx) {
+  const q = selectedQuestions[qIdx];
+  const slots = userAnswers[qIdx];
+  const area = document.getElementById(`interactive-area-${qIdx}`);
+
+  let sentenceHtml = `<div class="cloze-sentence">`;
+  q.parts.forEach((part, i) => {
+    sentenceHtml += escapeHtml(part);
+    if (i < slots.length) {
+      const val = slots[i];
+      sentenceHtml += `<span class="cloze-slot ${val ? "filled" : ""}" onclick="clearClozeSlot(${qIdx}, ${i})">${val ? escapeHtml(val) : `[пропуск ${i + 1}]`}</span>`;
+    }
+  });
+  sentenceHtml += `</div>`;
+
+  let chipsHtml = `<div class="chips-bank">`;
+  q.shuffledChips.forEach(chip => {
+    const used = slots.includes(chip);
+    chipsHtml += `<button type="button" class="chip-btn ${used ? "used" : ""}" onclick="fillClozeSlot(${qIdx}, '${escapeHtml(chip)}')">${escapeHtml(chip)}</button>`;
+  });
+  chipsHtml += `</div>`;
+
+  area.innerHTML = sentenceHtml + chipsHtml;
+
+  const allFilled = slots.every(s => s !== null);
+  document.getElementById(`confirm-btn-${qIdx}`).disabled = !allFilled;
+}
+
+function fillClozeSlot(qIdx, word) {
+  const slots = userAnswers[qIdx];
+  const emptyIdx = slots.indexOf(null);
+  if (emptyIdx === -1) return;
+  slots[emptyIdx] = word;
+  drawClozeWidget(qIdx);
+}
+
+function clearClozeSlot(qIdx, slotIdx) {
+  const slots = userAnswers[qIdx];
+  if (slots[slotIdx] !== null) {
+    slots[slotIdx] = null;
+    drawClozeWidget(qIdx);
+  }
+}
+
+// ==========================================
+// ПОДТВЕРЖДЕНИЕ ШАГА И ОЦЕНИВАНИЕ
+// ==========================================
+
+function confirmStep(idx) {
+  if (idx !== currentStep) return;
+  currentStep++;
+  updateProgress();
+
+  if (currentStep < selectedQuestions.length) {
+    renderAccordion();
+  } else {
+    finishTest();
+  }
+}
+
+function evaluateQuestion(q, ans) {
+  if (q.type === "single") {
+    const chosenOpt = q.options[ans];
+    const correctOpt = q.options.find(o => o.correct);
+    const isOk = chosenOpt && chosenOpt.correct;
+    return {
+      earned: isOk ? q.points : 0,
+      max: q.points,
+      userText: chosenOpt ? chosenOpt.text : "Нет ответа",
+      correctText: correctOpt.text
+    };
+  }
+
+  if (q.type === "multi") {
+    const chosenIndices = ans || [];
+    const correctIndices = q.options.map((o, i) => (o.correct ? i : -1)).filter(i => i !== -1);
+
+    const exactMatch =
+      chosenIndices.length === correctIndices.length &&
+      correctIndices.every(i => chosenIndices.includes(i));
+
+    let earned = 0;
+    if (exactMatch) {
+      earned = 2;
+    } else {
+      const rightChosen = chosenIndices.filter(i => correctIndices.includes(i)).length;
+      const wrongChosen = chosenIndices.filter(i => !correctIndices.includes(i)).length;
+      if (rightChosen >= 1 && wrongChosen === 0) earned = 1;
+    }
+
+    return {
+      earned,
+      max: q.points,
+      userText: chosenIndices.map(i => q.options[i].text).join("; ") || "Нет ответа",
+      correctText: correctIndices.map(i => q.options[i].text).join("; ")
+    };
+  }
+
+  if (q.type === "match") {
+    let rightCount = 0;
+    q.pairs.forEach((p, i) => {
+      if (ans && ans[i] === p.right) rightCount++;
+    });
+    let earned = 0;
+    if (rightCount === q.pairs.length) earned = 2;
+    else if (rightCount >= 2) earned = 1;
+
+    return {
+      earned,
+      max: q.points,
+      userText: q.pairs.map((p, i) => `${p.left} → ${ans[i] || "—"}`).join(" | "),
+      correctText: q.pairs.map(p => `${p.left} → ${p.right}`).join(" | ")
+    };
+  }
+
+  if (q.type === "rank") {
+    let rightPos = 0;
+    q.items.forEach((item, i) => {
+      if (ans && ans[i] === item) rightPos++;
+    });
+    let earned = 0;
+    if (rightPos === q.items.length) earned = 2;
+    else if (rightPos >= 2) earned = 1;
+
+    return {
+      earned,
+      max: q.points,
+      userText: ans.map((it, i) => `${i + 1}) ${it}`).join(" → "),
+      correctText: q.items.map((it, i) => `${i + 1}) ${it}`).join(" → ")
+    };
+  }
+
+  if (q.type === "cloze") {
+    let rightSlots = 0;
+    q.answers.forEach((word, i) => {
+      if (ans && ans[i] === word) rightSlots++;
+    });
+    let earned = 0;
+    if (rightSlots === q.answers.length) earned = 2;
+    else if (rightSlots >= 2) earned = 1;
+
+    return {
+      earned,
+      max: q.points,
+      userText: (ans || []).join(", "),
+      correctText: q.answers.join(", ")
+    };
+  }
+
+  return { earned: 0, max: q.points, userText: "", correctText: "" };
+}
+
+function finishTest() {
+  testActive = false;
+  document.getElementById("test-screen").classList.add("hidden");
+  document.getElementById("result-screen").classList.remove("hidden");
+
+  let totalScore = 0;
+  let fullCorrectTasks = 0;
+  const reviews = [];
+
+  selectedQuestions.forEach((q, idx) => {
+    const res = evaluateQuestion(q, userAnswers[idx]);
+    totalScore += res.earned;
+    if (res.earned === res.max) fullCorrectTasks++;
+    reviews.push({ q, res, idx });
+  });
+
+  // Шкала оценивания:
+  // от 15 до 20 -> 5
+  // от 10 до 14 -> 4
+  // меньше 10 -> 3
+  let grade = 3;
+  let gradeClass = "grade-3";
+  let verdict = "Базовый уровень усвоен. Изучите разбор ошибок ниже и повторите тему.";
+
+  if (totalScore >= 15) {
+    grade = 5;
+    gradeClass = "grade-5";
+    verdict = "Отличный результат! Вы уверенно разбираетесь в психогигиене и методах саморегуляции.";
+  } else if (totalScore >= 10) {
+    grade = 4;
+    gradeClass = "grade-4";
+    verdict = "Хороший результат! Большинство задач решено верно, но есть отдельные неточности.";
+  }
+
+  const badge = document.getElementById("grade-badge");
+  badge.className = `grade-circle ${gradeClass}`;
+  document.getElementById("final-grade").textContent = grade;
+  document.getElementById("result-student-title").textContent = `${studentName} (${studentClass})`;
+  document.getElementById("result-verdict-text").textContent = verdict;
+
+  document.getElementById("stat-score").textContent = `${totalScore} / 20`;
+  document.getElementById("stat-correct").textContent = `${fullCorrectTasks} / 12`;
+  document.getElementById("stat-violations").textContent = violations;
+  if (violations > 0) {
+    document.getElementById("stat-violations").style.color = "#ef4444";
+  }
+
+  const revContainer = document.getElementById("review-container");
+  revContainer.innerHTML = reviews.map(({ q, res, idx }) => {
+    let cardClass = "bad";
+    let statusBadge = `0 / ${res.max} б.`;
+    if (res.earned === res.max) {
+      cardClass = "ok";
+      statusBadge = `✓ ${res.earned} / ${res.max} б.`;
+    } else if (res.earned > 0) {
+      cardClass = "partial";
+      statusBadge = `Частично: ${res.earned} / ${res.max} б.`;
+    }
+
+    return `
+      <div class="review-card ${cardClass}">
+        <div class="review-q">${idx + 1}. ${escapeHtml(q.prompt)} <span style="color:#f59e0b;">(${statusBadge})</span></div>
+        <div class="review-meta"><strong>Ваш ответ:</strong> ${escapeHtml(res.userText)}</div>
+        ${res.earned < res.max ? `<div class="review-meta" style="color:#86efac;"><strong>Верный ответ:</strong> ${escapeHtml(res.correctText)}</div>` : ""}
+        <div class="review-expl">💡 ${escapeHtml(q.explanation)}</div>
+      </div>
+    `;
+  }).join("");
+
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+</script>
+</body>
+</html>
